@@ -1,0 +1,83 @@
+[
+  {
+    "collection": "/api/v1",
+    "name": "/types",
+    "data": [
+      {
+        "apiId": "2",
+        "name": "Bicycle",
+        "translatedName": "Bicycle",
+        "id": {
+          "low": 2,
+          "high": 0
+        }
+      },
+      {
+        "apiId": "0",
+        "name": "Personal",
+        "translatedName": "Personal",
+        "id": {
+          "low": 0,
+          "high": 0
+        }
+      },
+      {
+        "apiId": "1",
+        "name": "Scooter",
+        "translatedName": "Scooter",
+        "id": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    ]
+  },
+  {
+    "collection": "/api/v1/types/0",
+    "name": "/brands",
+    "data": [
+      {
+        "apiId": "2",
+        "name": "ALFA ROMEO",
+        "translatedName": "ALFA ROMEO",
+        "relationToType": "HAS_TYPE",
+        "typeId": {
+          "low": 0,
+          "high": 0
+        },
+        "id": {
+          "low": 2,
+          "high": 0
+        }
+      },
+      {
+        "apiId": "16",
+        "name": "BMW",
+        "translatedName": "BMW",
+        "relationToType": "HAS_TYPE",
+        "typeId": {
+          "low": 0,
+          "high": 0
+        },
+        "id": {
+          "low": 16,
+          "high": 0
+        }
+      },
+      {
+        "apiId": "93",
+        "name": "RENAULT",
+        "translatedName": "RENAULT",
+        "relationToType": "HAS_TYPE",
+        "typeId": {
+          "low": 0,
+          "high": 0
+        },
+        "id": {
+          "low": 93,
+          "high": 0
+        }
+      }
+    ]
+  }
+]
