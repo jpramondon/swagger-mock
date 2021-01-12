@@ -11,7 +11,7 @@ There are 2:
 - offer a simple and stupid authentication route htat's really handy when it comes to integration and end-to-end testing.
 (that's 3, I know)
 
-Suggestion:
+__Suggestion__:
   Every application may come with their own mocking requirements on the same API to mock. This behaviour is achievable and totally encouraged when using `mock-server`, using a per-application mock organisation. For instance, here `myApp1` and `myApp2` are application requiring that the same mocked API (`toastApi`) returns different responses:
   - /myApp1/toastApi/1
   - /myapp2/toastApi/1

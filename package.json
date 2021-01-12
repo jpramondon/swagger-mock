@@ -8,13 +8,12 @@
     "start:dev": "nodemon --watch '**/*.ts' --ignore 'node_modules/**/*' --exec ts-node src/index.ts",
     "lint": "tslint --project .",
     "build": "rimraf dist && tsc",
-    "docker:build": "docker build -t swaggermockserver:latest -t swaggermockserver:$npm_package_version .",
+    "docker:build": "docker build -t gearedminds/swaggermockserver:latest -t gearedminds/swaggermockserver:$npm_package_version .",
     "docker:run:default": "docker run -p 8000:8000 swaggermockserver:latest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apidevtools/swagger-express-middleware": "4.0.2",
     "@types/express": "4.17.6",
     "@types/node": "14.0.1",
     "@types/swagger-express-middleware": "1.0.10",
