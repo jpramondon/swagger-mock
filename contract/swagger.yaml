@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Toast distributor
+  description: A sample API that demonstrates Swagger Express Middleware features
+
+basePath: /api/v1
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+definitions:
+  toast:
+    require:
+      - key
+      - type
+    properties:
+      key:
+        type: integer
+      type:
+        type: string
+
+parameters:
+  toastKey:
+    name: toastKey
+    in: path
+    description: key of a toast
+    required: true
+    type: integer
+
+paths:
+
+  /toast:
+    get:
+      description: Returns all toasts
+      operationId: findToast
+      responses:
+        default:
+          description: Returns the matching toasts
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/toast"
+
+  /toast/{toastKey}:
+    parameters:
+      - $ref: "#/parameters/toastKey"
+    get:
+      description: Returns a toast by its key
+      operationId: findToastByKey
+      responses:
+        default:
+          description: Returns the toast data
+          schema:
+            $ref: "#/definitions/toast"
