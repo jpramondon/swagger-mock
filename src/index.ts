@@ -1,5 +1,5 @@
 import express, { Express, NextFunction, Request, Response } from "express";
-import { readFile } from "fs";
+import { readFileSync } from "fs";
 import { normalize } from "path";
 import { SwaggerMiddleware } from "swagger-express-middleware";
 import { customBehaviour } from "./custom_behaviour";
@@ -8,7 +8,7 @@ import { notFoundMw } from "./middlewares/NotFoundHandlerMiddleware";
 const SwaggerExpressMiddleware = require("swagger-express-middleware");
 
 const app: Express = express();
-const swaggerFilePath = process.env.SWAGGER_FILE_PATH || "contract/swagger.json";
+const swaggerFilePath = process.env.SWAGGER_FILE_PATH || "contract/swagger.yaml";
 const dataFilePath = process.env.DATA_FILE_PATH || "data/data-sample.json";
 const port = process.env.PORT || "8000";
 const pathOnGo = process.env.PATH_ON_GO || false;
@@ -27,26 +27,22 @@ function swaggerExpressMiddlewareCallback(err: any, middleware: SwaggerMiddlewar
         });
 }
 
-function fetchResources(resourcesFilePath: string) {
+function fetchResources(resourcesFilePath: string): Promise<any> {
     return new Promise((resolve, reject) => {
-        readFile(normalize(resourcesFilePath), { encoding: "utf-8" }, (err, content) => {
-            if (err) {
-                reject(err);
-            }
-            try {
-                resolve(SwaggerExpressMiddleware.Resource.parse(content));
-            } catch (error) {
-                console.error("Error when reading the data json file.", error);
-                reject(error);
-            }
-        });
+        try {
+            const storeContent = readFileSync(normalize(resourcesFilePath), "utf-8");
+            const dataResources = SwaggerExpressMiddleware.Resource.parse(storeContent);
+            resolve(dataResources);
+        } catch (error) {
+            console.error("Error when reading the data json file.", error);
+            reject(error);
+        }
     });
 }
 
 function createMemoryDataStore(resource: any | any[]) {
     const dataStore = new SwaggerExpressMiddleware.MemoryDataStore();
     dataStore.save(resource);
-
     return Promise.resolve(dataStore);
 }
 
@@ -59,7 +55,7 @@ function ignoreNullFieldErrors(err: any, req: Request, res: Response, next: Next
 function removeFilename(url: string) {
     const urlAsArray = url.split("/");
     urlAsArray.pop();
-    return(urlAsArray.join("/"));
+    return (urlAsArray.join("/"));
 }
 
 function initPathOnGoExpressApp(middleware: SwaggerMiddleware) {
@@ -127,11 +123,7 @@ function initPathOnGoExpressApp(middleware: SwaggerMiddleware) {
 function initExpressApp(dataStore: any, middleware: SwaggerMiddleware) {
     app.use(
         loggingMw,
-        middleware.metadata(),
-        middleware.CORS(),
-        middleware.validateRequest(),
-        middleware.parseRequest(),
-        ignoreNullFieldErrors,
+        ignoreNullFieldErrors
     );
 
     app.get("/api/mock/_health", (req, res) => {
@@ -140,7 +132,13 @@ function initExpressApp(dataStore: any, middleware: SwaggerMiddleware) {
 
     customBehaviour(app, dataStore);
 
-    app.use(middleware.mock(dataStore));
+    app.use(
+        middleware.metadata(),
+        middleware.CORS(),
+        middleware.validateRequest(),
+        middleware.parseRequest(),
+        middleware.mock(dataStore)
+    );
 
     app.use(notFoundMw);
 
