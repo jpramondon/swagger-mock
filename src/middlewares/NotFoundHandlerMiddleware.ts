@@ -3,7 +3,7 @@ import { mainLogger } from "../Logger";
 
 export function notFoundMw(req: Request, res: Response, next: NextFunction): any {
     mainLogger.error(`${req.url} not found`);
-    res.set(404);
+    res.status(404);
     const resObject = {
         message: `Url ${req.url} not found`,
         status: 404,
