@@ -27,7 +27,7 @@ jobs:
       # Caching works but is so slow, it's best checking out, installing and building again
       # Or, use compression :)
       - name: Compress build artifacts
-        run: tar -cvzf all_build.tgz * .env.test .env.ut .git/
+        run: tar -cvzf all_build.tgz * .git/
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
         with:
