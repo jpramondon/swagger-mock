@@ -37,6 +37,7 @@ jobs:
   docker:
     name: Docker
     needs: [ build ]
+    if: "startsWith(github.event.head_commit.message, 'chore(release)')"
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts
