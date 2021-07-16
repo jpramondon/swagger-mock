@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/jpramondon/swagger-mock/compare/1.0.1...1.0.2) (2021-07-16)
+
+
+### Bug Fixes
+
+* push docker release (again) ([#7](https://github.com/jpramondon/swagger-mock/issues/7)) ([cc1c232](https://github.com/jpramondon/swagger-mock/commit/cc1c232442030ae2f627a1dbd98595f3313d1a4b))
+* push docker release (final) ([#8](https://github.com/jpramondon/swagger-mock/issues/8)) ([ed70c86](https://github.com/jpramondon/swagger-mock/commit/ed70c86586951b6111d4f80fe2e6224111fdb5be))
+
 ## [1.0.1](https://github.com/jpramondon/swagger-mock/compare/1.0.0...1.0.1) (2021-07-16)
 
 
