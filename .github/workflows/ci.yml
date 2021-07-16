@@ -63,10 +63,10 @@ jobs:
       - name: Set escaped branch name
         shell: bash
         run: echo "TAG_NAME=$(echo ${{ env.BRANCH_NAME }} | sed 's/\//_/g')" >> $GITHUB_ENV
-      # - name: Build and push docker image to Docker registry with tag ${{env.TAG_NAME}}
-      #   uses: docker/build-push-action@v2
-      #   with:
-      #     file: Dockerfile
-      #     context: .
-      #     tags: gearedminds/swaggermockserver:${{env.TAG_NAME}}
-      #     push: true
+      - name: Build and push docker image to Docker registry with tag ${{env.TAG_NAME}}
+        uses: docker/build-push-action@v2
+        with:
+          file: Dockerfile
+          context: .
+          tags: gearedminds/swaggermockserver:${{env.TAG_NAME}},gearedminds/swaggermockserver:latest
+          push: true
