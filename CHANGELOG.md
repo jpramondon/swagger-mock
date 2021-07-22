@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/jpramondon/swagger-mock/compare/1.0.2...1.0.3) (2021-07-22)
+
+
+### Bug Fixes
+
+* missing formidable dependency ([#9](https://github.com/jpramondon/swagger-mock/issues/9)) ([984e7ac](https://github.com/jpramondon/swagger-mock/commit/984e7accca1a3e06c68b8c9803603a21d16cd670))
+
 ## [1.0.2](https://github.com/jpramondon/swagger-mock/compare/1.0.1...1.0.2) (2021-07-16)
 
 
