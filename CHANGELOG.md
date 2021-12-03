@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/jpramondon/swagger-mock/compare/1.0.5...1.0.6) (2021-12-03)
+
+
+### Bug Fixes
+
+* package-lock with public registry ([#12](https://github.com/jpramondon/swagger-mock/issues/12)) ([b09f3f9](https://github.com/jpramondon/swagger-mock/commit/b09f3f97b61b085cedfeb23b4ba712662942f85e))
+
 ## [1.0.5](https://github.com/jpramondon/swagger-mock/compare/1.0.4...1.0.5) (2021-12-03)
 
 
