@@ -1,3 +1,17 @@
+## [1.0.5](https://github.com/jpramondon/swagger-mock/compare/1.0.4...1.0.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* docker embedded install command ([#11](https://github.com/jpramondon/swagger-mock/issues/11)) ([08b9657](https://github.com/jpramondon/swagger-mock/commit/08b9657255245b412728ae1778df4abc37d9ddd5))
+
+## [1.0.4](https://github.com/jpramondon/swagger-mock/compare/1.0.3...1.0.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* added date-fns and tz dependencies ([#10](https://github.com/jpramondon/swagger-mock/issues/10)) ([c5c7baa](https://github.com/jpramondon/swagger-mock/commit/c5c7baa6b85f2e625d83d9d52d943ee7f9e21357))
+
 ## [1.0.3](https://github.com/jpramondon/swagger-mock/compare/1.0.2...1.0.3) (2021-07-22)
 
 
