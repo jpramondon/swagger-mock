@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/jpramondon/swagger-mock/compare/1.0.4...1.0.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* docker embedded install command ([#11](https://github.com/jpramondon/swagger-mock/issues/11)) ([08b9657](https://github.com/jpramondon/swagger-mock/commit/08b9657255245b412728ae1778df4abc37d9ddd5))
+
 ## [1.0.4](https://github.com/jpramondon/swagger-mock/compare/1.0.3...1.0.4) (2021-12-03)
 
 
