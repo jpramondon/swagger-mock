@@ -8,7 +8,7 @@ COPY data /home/node/app/data
 COPY contract /home/node/app/contract
 COPY src /home/node/app/src
 
-RUN npm install --production
+RUN npm ci --production
 
 EXPOSE 8000
 
