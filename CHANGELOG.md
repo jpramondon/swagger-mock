@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/jpramondon/swagger-mock/compare/1.0.6...1.0.7) (2021-12-08)
+
+
+### Bug Fixes
+
+* Luxon replaces datefns ([#13](https://github.com/jpramondon/swagger-mock/issues/13)) ([4fe9204](https://github.com/jpramondon/swagger-mock/commit/4fe9204cf60d69812c1b217726f547719aff6863))
+
 ## [1.0.6](https://github.com/jpramondon/swagger-mock/compare/1.0.5...1.0.6) (2021-12-03)
 
 
