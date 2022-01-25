@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/jpramondon/swagger-mock/compare/1.0.7...1.0.8) (2022-01-25)
+
+
+### Bug Fixes
+
+* adding http method logging ([#14](https://github.com/jpramondon/swagger-mock/issues/14)) ([fe5d54c](https://github.com/jpramondon/swagger-mock/commit/fe5d54c6cd4df1142b7cbcaaa2af963851a06469))
+
 ## [1.0.7](https://github.com/jpramondon/swagger-mock/compare/1.0.6...1.0.7) (2021-12-08)
 
 
